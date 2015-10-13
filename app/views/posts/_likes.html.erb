@@ -1,0 +1,12 @@
+<% if user_signed_in? && current_user.likes?(post) %>
+  <%= link_to "Unlike", post_like_path(post), method: :delete, remote: true , class: "btn btn-warning" %>
+<% else %>
+  <%= link_to "Like", post_like_path(post), method: :post, remote: true , class: "btn btn-primary" %>
+<% end %>
+
+
+<%= post.likes.count %>
+
+<% post.likes.each do |like| %>
+	<%= image_tag like.user.avatar_url, width: 50 %>
+<% end %>
