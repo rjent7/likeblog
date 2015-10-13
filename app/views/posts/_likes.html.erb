@@ -5,8 +5,9 @@
 <% end %>
 
 
-<%= post.likes.count %>
+
 
 <% post.likes.each do |like| %>
 	<%= image_tag like.user.avatar_url, width: 50 %>
+	<%= post.likes.count %>
 <% end %>
